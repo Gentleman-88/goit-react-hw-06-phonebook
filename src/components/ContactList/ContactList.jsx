@@ -1,6 +1,12 @@
+import { useSelector } from 'react-redux';
 import css from './ContactList.module.css'
 
 const ContactList = ({ contacts, handleDeleteContact }) => {
+
+    const someContacts = useSelector(store => store.contacts)
+    const filter = useSelector(store => store.filter)
+
+
     return (
         <ul className={css.contactList}>
             {contacts.map(contact => (
