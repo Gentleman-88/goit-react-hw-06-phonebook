@@ -1,11 +1,8 @@
-import { useEffect } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AddContactForm } from './AddContactForm/AddContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
-import { addContact } from './Redux/Contacts/contactReducer';
 
 export const App = () => {
   
@@ -13,11 +10,6 @@ export const App = () => {
   const contacts = useSelector(store => store.contacts.contacts)
   const filter = useSelector(store => store.contacts.filter)
 
-
-  useEffect(() => {
-      const stringifiedContacts = JSON.stringify(contacts);
-      localStorage.setItem('contacts', stringifiedContacts);
-  }, [contacts])
 
   const handleAddContact = formData => {
     const hasDuplicates = contacts.some(
@@ -33,8 +25,11 @@ export const App = () => {
       id: Math.random().toString()
     }
 
-    dispatch(addContact(finalProfile))
-
+    const action = {
+      type: "contacts/addContact",
+      payload: finalProfile
+    }
+    dispatch(action)
   };
 
   const handleDeleteContact = contactId => {

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialSatate = {
-    contacts: JSON.parse(localStorage.getItem('contacts')) ?? [],
+    contacts: [],
     filter: ""
 }
 
