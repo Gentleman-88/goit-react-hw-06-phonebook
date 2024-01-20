@@ -8,11 +8,11 @@ const initialSatate = {
 
 
 const contactsSlice = createSlice({
-    // Ім'я слайсу
+
     name: "contacts",
-    // Початковий стан редюсера слайсу
-    initialSatate,
-    // Об'єкт редюсерів
+
+    initialState: initialSatate,
+
     reducers: {
         addContact(state, action) {
             state.contacts.push(action.payload);
