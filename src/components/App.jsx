@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { AddContactForm } from './AddContactForm/AddContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { AddContactForm } from './AddContactForm/AddContactForm';
+import { Filter } from './Filter/Filter';
+import { ContactList } from './ContactList/ContactList';
 
 export const App = () => {
   
