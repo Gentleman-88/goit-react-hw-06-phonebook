@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './AddProfileForm.module.css'
-import { addContact } from 'Redux/Contacts/contactReducer';
+import { addContact } from '../../Redux/Contacts/contactReducer';
+import { selectContacts } from '../../Redux/selectors';
 
 export const AddContactForm = () => {
 
   const dispatch = useDispatch()
-  const contacts = useSelector(store => store.contacts.contacts)
+  const contacts = useSelector(selectContacts)
   
   const handleFormSubmit = event => {
 
